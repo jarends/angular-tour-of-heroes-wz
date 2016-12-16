@@ -1,0 +1,16 @@
+{
+    "in": ".",
+    "out": "./.wz.tmp",
+    "ts": {
+        "ngTool": false
+    },
+    "packer": {
+        "noCache":true,
+        "packages": [
+            {
+                "in": "./app/main.js",
+                "out": "./index.js"
+            }
+        ]
+    }
+}
