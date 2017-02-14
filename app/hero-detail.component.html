@@ -1,10 +1,15 @@
 <div *ngIf="hero">
-  <h2>{{hero.name}} details!</h2>
-  <div>
-    <label>id: </label>{{hero.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name" />
-  </div>
-  <button (click)="goBack()">Back</button>
+    <h2>{{hero.name}} details!</h2>
+    <div>
+        <label>id: </label>{{hero.id}}
+    </div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="hero.name" placeholder="name"/>
+    </div>
+    <div>
+        <label>stars: </label>
+        <input type="number" min="0" max="5" [(ngModel)]="hero.stars" placeholder="stars"/>
+    </div>
+    <button (click)="goBack()">Back</button>
 </div>

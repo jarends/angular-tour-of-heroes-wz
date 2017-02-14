@@ -9,7 +9,7 @@ import { HeroesComponent }      from './heroes.component';
 import { HeroService }          from './hero.service';
 
 import { AppRoutingModule }     from './app-routing.module';
-import {LoginCommand} from './login-command';
+import {BothComponent} from './both.component';
 
 @NgModule({
     imports: [
@@ -22,8 +22,9 @@ import {LoginCommand} from './login-command';
         DashboardComponent,
         HeroDetailComponent,
         HeroesComponent,
+        BothComponent
     ],
-    providers: [HeroService, LoginCommand],
+    providers: [HeroService ],
     bootstrap: [AppComponent]
 })
 export class AppModule

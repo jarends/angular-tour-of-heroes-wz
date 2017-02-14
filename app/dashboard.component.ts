@@ -4,21 +4,29 @@ import { Hero } from './hero';
 import { HeroService } from './hero.service';
 
 @Component({
-  moduleId: module.id,
-  selector: 'my-dashboard',
-  templateUrl: 'dashboard.component.html',
-  styleUrls: ['dashboard.component.css']
+    moduleId: module.id,
+    selector: 'my-dashboard',
+    templateUrl: 'dashboard.component.html',
+    styleUrls: ['dashboard.component.css']
 })
 
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit
+{
 
-  heroes: Hero[] = [];
+    heroes:Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+    constructor(private heroService:HeroService)
+    {
+    }
 
-  ngOnInit(): void {
-    console.log('dashboard module.id = ', module.id);
-    this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
-  }
+    ngOnInit():void
+    {
+        console.log('dashboard module.id = ', module.id);
+        this.heroService.getHeroes()
+            .then(heroes =>
+            {
+                this.heroes = heroes.concat().sort((heroA, heroB) => heroB.stars - heroA.stars);
+                this.heroes.length = 4;
+            })
+    }
 }

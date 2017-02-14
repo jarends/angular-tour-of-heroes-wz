@@ -1,7 +1,6 @@
 import {Injector} from '@angular/core';
 import { Component } from '@angular/core';
 import {HeroService} from './hero.service';
-import {LoginCommand} from './login-command';
 @Component({
     selector: 'my-app',
     styleUrls: ['app/app.component.css'],
@@ -10,6 +9,7 @@ import {LoginCommand} from './login-command';
     <nav>
       <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
       <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+      <a routerLink="/both" routerLinkActive="active">Both</a>
     </nav>
     <router-outlet></router-outlet>
   `
@@ -22,9 +22,5 @@ export class AppComponent
 
     constructor(public service:HeroService, public injector:Injector)
     {
-        var motu = injector.get(Injector);
-        var cmdA = injector.get(LoginCommand).create();
-        var cmdB = injector.get(LoginCommand).create();
-        console.log('app.constructor: ', cmdA == cmdB);
     }
 }
